@@ -1,0 +1,29 @@
+package ManejoExcepcionesBasico;
+
+import java.util.Scanner;
+
+public class EjemploBasico {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Ingrese un número entero: ");
+            String dato = sc.nextLine();
+            // Convertir texto a número
+            int numero = Integer.parseInt(dato);
+            double resultado = 100 / numero;
+
+            System.out.println("Resultado: " + resultado);
+
+        } catch (ArithmeticException e) {
+
+            System.out.println("No se puede dividir por cero");
+
+        } catch (NumberFormatException e) {
+            System.out.println("Debe ingresar un número válido");
+        } finally {
+            System.out.println("Programa finalizado correctamente");
+
+        }
+        sc.close();
+    }
+}
